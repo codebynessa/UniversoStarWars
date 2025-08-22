@@ -6,10 +6,31 @@ body {
     color: #fff;
 }
 
+
 header {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background: rgba(0,0,0,0.5);
+}
+
+/* Logo */
+header .logo {
+    width: 200px; /* tamanho padrão */
+    max-width: 50%; /* nunca ultrapassa metade da tela */
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Título e subtítulo */
+header h1 {
+    margin: 0.5rem 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ffd700;
 }
 
 
@@ -20,12 +41,10 @@ header {
     padding: 2rem;
 }
 
-
 .card {
-    perspective: 1000px; /* profundidade p efeito 3D */
+    perspective: 1000px;
 }
 
-/* frente e verso do card */
 .card-front, .card-back {
     width: 100%;
     height: 300px;
@@ -33,7 +52,7 @@ header {
     overflow: hidden;
     text-align: center;
     transition: transform 0.6s;
-    backface-visibility: hidden; /* Esconde o verso quando não está virado */
+    backface-visibility: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.6);
 }
 
@@ -44,14 +63,14 @@ header {
 .card-back {
     background: #111;
     color: #ffd700;
-    transform: rotateY(180deg); /* Começa virado */
+    transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
 }
 
-/* hover: vira o card */
+/* Hover flip */
 .card:hover .card-front {
     transform: rotateY(180deg);
 }
@@ -60,50 +79,21 @@ header {
     transform: rotateY(0deg);
 }
 
-/* imagem do card*/
+/* Imagem do card */
 .card img {
     width: 100%;
     height: 70%;
     object-fit: cover;
 }
 
-/* texto do card */
+/* Texto do card */
 .card h2 {
     margin: 0.5rem 0;
 }
 
-/* responsividade */
-@media (max-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1.5rem;
-        padding: 1rem;
-    }
-
-    .card-front, .card-back {
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-
-    .card-front, .card-back {
-        height: 200px;
-    }
-        footer .social-icons a {
-        display: block;
-        margin: 0.3rem 0;
-    }
-}
-
-
+/* ------------------------------
+Footer
+------------------------------ */
 footer {
     text-align: center;
     padding: 1.5rem;
@@ -115,10 +105,8 @@ footer {
 footer p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
-    color: #fff;
 }
 
-/* links sociais */
 footer .social-icons {
     margin-top: 0.5rem;
 }
@@ -132,6 +120,62 @@ footer .social-icons a {
 }
 
 footer .social-icons a:hover {
-    color: #64f3f3; /* cor ao passar o mouse */
+    color: #00ffff;
 }
 
+/* ------------------------------
+Responsividade
+------------------------------ */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header p {
+        font-size: 0.95rem;
+    }
+    header .logo {
+        width: 180px;
+    }
+    .card-front, .card-back {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+    header .logo {
+        width: 150px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    .card-front, .card-back {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+    header p {
+        font-size: 0.8rem;
+    }
+    header .logo {
+        width: 120px;
+    }
+    .card-front, .card-back {
+        height: 200px;
+    }
+    footer .social-icons a {
+        display: block;
+        margin: 0.3rem 0;
+    }
+}
