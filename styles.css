@@ -4,7 +4,11 @@ Global
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(ellipse at bottom, #000 0%, #111 100%);
+  background-image: url('img/fundo.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
 }
 
@@ -23,13 +27,17 @@ header .logo {
   width: 200px;
   max-width: 50%;
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Subtítulo */
-header h2 {
+h2 {
   color: #ffd700;
   margin: 1rem 0 0 0;
+  text-align: center;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px #ffd700;
+  margin-bottom: 1rem;
 }
 
 /* Linha */
@@ -38,7 +46,7 @@ hr {
   height: 1px;
   background: #ffd700;
   margin: 1rem auto;
-  width: 80%;
+  width: 100%;
 }
 
 .star-wars-intro h3 {
@@ -46,10 +54,7 @@ hr {
   margin-bottom: 2rem;
 }
 #home {
-    background-image: url(img/fundo.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background: #000;
     color: #fff;
     max-width: 900px;
     margin: 0 auto;
@@ -79,22 +84,11 @@ hr {
 .home-content p {
   max-width: 200px; /* limita largura do texto */
   font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background:  rgba(247, 187, 85, 0.6);
-    border-radius: 10px;
-    box-shadow: 0 4px 50px #f5e103;
-    opacity: 0.9;
-    color: #000;
+
     
     
 }
-.home-content p:hover {
-    background:  rgba(247, 187, 85, 0.9);
-    box-shadow: 0 4px 50px #f5e103;
-    color: #000;
-    transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
-}
+
 
 .home-image {
   max-width: 400px; /* tamanho da imagem */
@@ -106,7 +100,7 @@ hr {
 
 }
 #home .home-content p {
-    color: #171109; /* branco */
+    color: #facd39; 
     font-size: 1.1rem;
     margin: 0;
     padding: 0.5rem;
@@ -138,11 +132,11 @@ Menu hambúrguer
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .navbar a {
-  color: #ffd700;
+  color: #efe79c8d;
   margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
@@ -150,7 +144,7 @@ Menu hambúrguer
 }
 
 .navbar a:hover {
-  color: hwb(19 18% 3% / 0.616);
+  color: #ffd700;
 }
 
 /* ------------------------------
@@ -279,10 +273,15 @@ Responsividade
   header .logo { width: 150px; }
   .card-front, .card-back { height: 250px; }
   .cards-container { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; padding: 1rem; }
+
 }
 
 @media (max-width: 480px) {
   header .logo { width: 120px; }
   .card-front, .card-back { height: 200px; }
   footer .social-icons a { display: block; margin: 0.3rem 0; }
+}
+@media (max-width: 320px) {
+  header .logo { width: 100px; }
+  .card-front, .card-back { height: 180px; }
 }
