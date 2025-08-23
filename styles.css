@@ -1,181 +1,288 @@
-
+/* ------------------------------
+Global
+------------------------------ */
 body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: radial-gradient(ellipse at bottom, #000 0%, #111 100%);
-    color: #fff;
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(ellipse at bottom, #000 0%, #111 100%);
+  color: #fff;
 }
 
-
+/* ------------------------------
+Header
+------------------------------ */
 header {
-    text-align: center;
-    padding: 1.5rem;
-    background: rgba(0,0,0,0.5);
-}
+  text-align: center;
+  padding: 1.5rem;
+  background: rgb(0, 0, 0);
+  position: relative;
+  border-bottom: 2px solid #ffd700;}
 
 /* Logo */
 header .logo {
-    width: 200px; /* tamanho padrão */
-    max-width: 50%; /* nunca ultrapassa metade da tela */
-    height: auto;
-    margin-bottom: 1rem;
+  width: 200px;
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
-/* Título e subtítulo */
-header h1 {
-    margin: 0.5rem 0;
-    font-size: 2rem;
+/* Subtítulo */
+header h2 {
+  color: #ffd700;
+  margin: 1rem 0 0 0;
 }
 
-header p {
-    margin: 0;
-    font-size: 1rem;
-    color: #ffd700;
+/* Linha */
+hr {
+  border: 0;
+  height: 1px;
+  background: #ffd700;
+  margin: 1rem auto;
+  width: 80%;
 }
 
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
+.star-wars-intro h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#home {
+    background-image: url(img/fundo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #f5e103;
+    margin-bottom: 2rem;
+    border: 2px solid #f9fffd;
+    width: 100%;
+    text-align: center;
+    margin-top: rem;
+
+
+}
+
+.home-content {
+  display: flex;
+  align-items: center; /* alinha verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 2rem; /* espaço entre os elementos */
+  flex-wrap: wrap; /* garante responsividade em telas pequenas */
+    margin-top: 1rem;
+    height: auto;
+
+}
+
+.home-content p {
+  max-width: 200px; /* limita largura do texto */
+  font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background:  rgba(247, 187, 85, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 50px #f5e103;
+    opacity: 0.9;
+    color: #000;
+    
+    
+}
+.home-content p:hover {
+    background:  rgba(247, 187, 85, 0.9);
+    box-shadow: 0 4px 50px #f5e103;
+    color: #000;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.home-image {
+  max-width: 400px; /* tamanho da imagem */
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #f5e103;
+
+}
+#home .home-content p {
+    color: #171109; /* branco */
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+
+/* ------------------------------
+Menu hambúrguer
+------------------------------ */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: #ffd700;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Navbar normal */
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.navbar a {
+  color: #ffd700;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: hwb(19 18% 3% / 0.616);
+}
+
+/* ------------------------------
+Seção Home
+------------------------------ */
+#home {
+  max-width: 900px;         /* largura máxima para não ficar esticado demais */
+  margin: 0 auto;           /* centraliza no meio da tela */
+  padding: 2rem;            /* espaço interno */
+  text-align: center;       /* centraliza o texto */
+}
+
+#home h2 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+
+/* ------------------------------
+Cards
+------------------------------ */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .card {
-    perspective: 1000px;
+  perspective: 1000px;
 }
 
 .card-front, .card-back {
-    width: 100%;
-    height: 300px;
-    border-radius: 1rem;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.6s;
-    backface-visibility: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+  width: 100%;
+  height: 300px;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.6s;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.6);
 }
 
-.card-front {
-    background: rgba(255,255,255,0.05);
-}
-
+.card-front { background: rgba(255,255,255,0.05); }
 .card-back {
-    background: #111;
-    color: #ffd700;
-    transform: rotateY(180deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
+  background: #111;
+  color: #ffd700;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-/* Hover flip */
-.card:hover .card-front {
-    transform: rotateY(180deg);
-}
+/* Hover flip no desktop */
+.card:hover .card-front { transform: rotateY(180deg); }
+.card:hover .card-back { transform: rotateY(0deg); }
 
-.card:hover .card-back {
-    transform: rotateY(0deg);
-}
-
-/* Imagem do card */
-.card img {
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
-}
-
-/* Texto do card */
-.card h2 {
-    margin: 0.5rem 0;
-}
+.card img { width: 100%; height: 70%; object-fit: cover; }
+.card h2 { margin: 0.5rem 0; }
 
 /* ------------------------------
 Footer
 ------------------------------ */
 footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: rgba(0,0,0,0.6);
-    border-top: 2px solid #ffd700;
-    margin-top: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.6);
+  border-top: 2px solid #ffd700;
+  margin-top: 2rem;
 }
 
-footer p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-}
+footer p { margin: 0.5rem 0; font-size: 0.9rem; }
 
 footer .social-icons {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 footer .social-icons a {
-    color: #ffd700;
-    margin: 0 0.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+  color: #ffd700;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 footer .social-icons a:hover {
-    color: #00ffff;
+  color: #00ffff;
 }
 
 /* ------------------------------
 Responsividade
 ------------------------------ */
 @media (max-width: 1024px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-    header p {
-        font-size: 0.95rem;
-    }
-    header .logo {
-        width: 180px;
-    }
-    .card-front, .card-back {
-        height: 280px;
-    }
+  header .logo { width: 180px; }
+  .card-front, .card-back { height: 280px; }
 }
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    header p {
-        font-size: 0.9rem;
-    }
-    header .logo {
-        width: 150px;
-    }
-    .cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1.5rem;
-        padding: 1rem;
-    }
-    .card-front, .card-back {
-        height: 250px;
-    }
+  .menu-icon { display: block; }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    background: rgba(0,0,0,0.95);
+    padding: 1rem;
+    border-radius: 0 0 0 10px;
+    z-index: 5;
+  }
+
+  #menu-toggle:checked ~ .navbar { display: flex; }
+
+  .navbar a { margin: 0.5rem 0; }
+
+  header .logo { width: 150px; }
+  .card-front, .card-back { height: 250px; }
+  .cards-container { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; padding: 1rem; }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.3rem;
-    }
-    header p {
-        font-size: 0.8rem;
-    }
-    header .logo {
-        width: 120px;
-    }
-    .card-front, .card-back {
-        height: 200px;
-    }
-    footer .social-icons a {
-        display: block;
-        margin: 0.3rem 0;
-    }
+  header .logo { width: 120px; }
+  .card-front, .card-back { height: 200px; }
+  footer .social-icons a { display: block; margin: 0.3rem 0; }
 }
